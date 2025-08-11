@@ -1,8 +1,9 @@
-package com.canbe.HotelBooking.notification;
+package com.canbe.HotelBooking.service.impl;
 
 import com.canbe.HotelBooking.dto.NotificationDto;
 import com.canbe.HotelBooking.enums.NotificationType;
 import com.canbe.HotelBooking.model.Notification;
+import com.canbe.HotelBooking.service.NotificationService;
 import com.canbe.HotelBooking.repository.NotificationRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

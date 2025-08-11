@@ -1,4 +1,4 @@
-package com.canbe.HotelBooking.notification;
+package com.canbe.HotelBooking.service;
 
 import com.canbe.HotelBooking.dto.NotificationDto;
 
