@@ -1,6 +1,7 @@
 spring:
   application:
     name: HotelBooking
+
   datasource:
     url: jdbc:postgresql://localhost:5435/hotel_booking_db
     username: postgres
@@ -10,6 +11,18 @@ spring:
       ddl-auto: update
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ***********************
+    password: ***********************
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
 secret:
     jwt:
       string: b2Lg1fPqs92hJ3nT1VpXw!Gz0zPb3kXv7YvX@jJs9R8tT0h8K9V5e8b2v!hC
