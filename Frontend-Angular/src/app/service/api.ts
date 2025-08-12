@@ -1,0 +1,51 @@
+import { Injectable } from '@angular/core';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import CryptoJS from 'crypto-js';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class Api {
+  private static BASE_URL = "http://localhost:8080/api";
+  private static ENCRYPTION_KEY = "encrypt-key";
+
+  constructor(private http: HttpClient){}
+
+  encryptAndSaveToStorage(key: string , value: string): void{
+
+    const encryptedValue = CryptoJS.AES.encrypt(
+      value,
+      Api.ENCRYPTION_KEY).toString();
+
+    localStorage.setItem(key,encryptedValue);
+  }
+  
+
+  private getFromStorageAndDecrypt(key: string): string | null {
+    try {
+      const encryptedValue = localStorage.getItem(key);
+      if (!encryptedValue) return null;
+      return CryptoJS.AES.decrypt(
+        encryptedValue,
+        Api.ENCRYPTION_KEY
+      ).toString(CryptoJS.enc.Utf8);
+    } catch (error) {
+      return null;
+    }
+  }
+
+  private clearAuth(): void {
+    localStorage.removeItem('token');
+    localStorage.removeItem('role');
+  }
+
+  private getHeader(): HttpHeaders {
+    const token = this.getFromStorageAndDecrypt('token');
+    return new HttpHeaders({
+      Authorization: `Bearer ${token}`,
+    });
+  }
+
+
+}
