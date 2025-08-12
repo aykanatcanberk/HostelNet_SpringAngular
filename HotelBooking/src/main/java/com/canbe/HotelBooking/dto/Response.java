@@ -42,6 +42,7 @@ public class Response {
     //Payment data
     private PaymentDto payment;
     private List<PaymentDto> payments;
+    private String transactionId;
 
     //Payment data
     private NotificationDto notification;

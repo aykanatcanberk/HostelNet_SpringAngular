@@ -14,8 +14,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: ******
-    password: ******
+    username: ****
+    password: ****
     properties:
       mail:
         smtp:
@@ -23,6 +23,18 @@ spring:
           starttls:
             enable: true
             required: true
+
+  servlet:
+    multipart:
+      max-file-size: 1GB
+      max-request-size: 1GB
+
 secret:
     jwt:
       string: b2Lg1fPqs92hJ3nT1VpXw!Gz0zPb3kXv7YvX@jJs9R8tT0h8K9V5e8b2v!hC
+
+
+stripe:
+  api:
+    public_key: ****
+    secret_key: ****
