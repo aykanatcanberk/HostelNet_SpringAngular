@@ -1,7 +1,5 @@
 footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    position: static; 
     width: 100%;
     background-color: #f7f7f7;
     color: #555;
@@ -14,26 +12,27 @@ footer section {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 10px;
+    height: 28px;
+    gap: 8px;
 }
 
 footer section a {
     color: #666;
-    font-size: 22px;
-    margin: 0 10px;
+    font-size: 14px;
+    line-height: 1;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 footer section a:hover {
     color: #333;
-    transform: translateY(-3px);
+    transform: translateY(-1px);
 }
 
 footer .text-center.text-body {
     background-color: #eaeaea;
-    font-size: 14px;
+    font-size: 12px;
     color: #555 !important;
-    padding: 10px 0;
+    height: 28px;
     display: flex;
     justify-content: center; 
     align-items: center;
@@ -51,5 +50,5 @@ footer .text-center.text-body a:hover {
 
 body {
     margin: 0;
-    padding-bottom: 90px; 
+    padding-bottom: 0; 
 }
