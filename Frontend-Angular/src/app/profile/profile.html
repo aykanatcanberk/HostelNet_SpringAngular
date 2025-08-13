@@ -1,0 +1,59 @@
+<div class="profile-container">
+  <div *ngIf="user; else loading" class="profile-card">
+    
+    <!-- Başlık -->
+    <h2>Welcome, {{ user.firstName }}</h2>
+
+    <!-- Action Butonları -->
+    <div class="actions">
+      <button class="edit-btn" (click)="handleEditProfile()">
+        <i class="fas fa-user-edit me-2"></i>Edit Profile
+      </button>
+      <button class="logout-btn" (click)="handleLogout()">
+        <i class="fas fa-sign-out-alt me-2"></i>Logout
+      </button>
+    </div>
+
+    <!-- Error Mesajı -->
+    <p *ngIf="error" class="error">{{ error }}</p>
+
+    <!-- Profil Detayları -->
+    <div class="details card-section">
+      <h3>My Profile Details</h3>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+      <p><strong>Phone Number:</strong> {{ user.phoneNumber }}</p>
+    </div>
+
+    <!-- Booking History -->
+    <div class="bookings card-section">
+      <h3>My Booking History</h3>
+      <div *ngIf="bookings && bookings.length > 0; else noBookings">
+        <div *ngFor="let booking of bookings" class="booking-item">
+          <div class="booking-header">
+            <p><strong>Booking Code:</strong> {{ booking?.bookingReference }}</p>
+            <p><strong>Payment Status:</strong> {{ booking?.paymentStatus }}</p>
+            <p><strong>Booking Status:</strong> {{ booking?.bookingStatus }}</p>
+          </div>
+          <div class="booking-body">
+            <p><strong>Check-in:</strong> {{ booking?.checkInDate | date }}</p>
+            <p><strong>Check-out:</strong> {{ booking?.checkOutDate | date }}</p>
+            <p><strong>Amount:</strong> {{ booking?.totalPrice | currency }}</p>
+            <p><strong>Room:</strong> {{ booking?.room?.roomNumber }} - {{ booking?.room?.type }}</p>
+          </div>
+          <img [src]="booking?.room?.imageUrl" alt="Room" class="room-image" />
+        </div>
+      </div>
+      <ng-template #noBookings>
+        <p>No bookings found.</p>
+      </ng-template>
+    </div>
+  </div>
+
+  <!-- Loading -->
+  <ng-template #loading>
+    <p class="loading-text">Loading profile...</p>
+  </ng-template>
+</div>
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
