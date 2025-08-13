@@ -23,7 +23,7 @@ export class Editprofile {
     this.apiService.myProfile().subscribe({
       next: (response: any) => {
         this.user = response.user;
-        this.cd.detectChanges(); // <-- Değişiklikleri view'e yansıt
+        this.cd.detectChanges();
       },
       error: (err) => {
         this.showError(err?.error?.message || 'Error fetching user profile');

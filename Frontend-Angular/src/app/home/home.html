@@ -1,0 +1,62 @@
+<div class="home">
+
+  <header>
+    <img src="./images/tatil2.png" alt="Hotel" />
+    <div class="overlay"></div>
+    <div class="overlay-content">
+      <h1>Welcome to <span class="highlight"> Hotel Booking </span></h1>
+      <h3>Your gateway to comfort and luxury</h3>
+    </div>
+  </header>
+
+  <app-roomsearch (searchResults)="handleSearchResult($event)"></app-roomsearch>
+
+  <app-roomresult [roomSearchResults]="searchResults"></app-roomresult>
+
+  <h4><a class="all-rooms" href="/rooms">View All Rooms</a></h4>
+
+  <h2>Our Premium <span class="highlight">Services</span></h2>
+
+  <section class="services">
+    <div class="card">
+      <img src="./images/air-cond.png" alt="Air Conditioning" />
+      <div class="details">
+        <h3 class="title">Air Conditioning</h3>
+        <p class="description">
+          Enjoy a perfectly comfortable stay with individually controlled in-room air conditioning.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="./images/mini-bar.png" alt="Mini Bar" />
+      <div class="details">
+        <h3 class="title">Mini Bar</h3>
+        <p class="description">
+          A well-stocked mini bar with a selection of drinks and snacks at your convenience.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="./images/parking.png" alt="Parking" />
+      <div class="details">
+        <h3 class="title">Parking</h3>
+        <p class="description">
+          Secure on-site parking with valet options available for your convenience.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="./images/wifi.jpg" alt="WiFi" />
+      <div class="details">
+        <h3 class="title">High-Speed WiFi</h3>
+        <p class="description">
+          Stay connected with complimentary high-speed WiFi throughout the hotel.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</div>

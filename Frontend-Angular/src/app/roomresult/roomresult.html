@@ -20,9 +20,12 @@
           Edit Room
         </button>
         <button *ngIf="!isAdmin" (click)="navigateToRoomDetails(room.id)">
-          View/Book Now
+          <i class="fas fa-bed"></i> View / Book Now
         </button>
       </div>
     </div>
   </div>
+  <ng-template #noRooms>
+    <p class="no-rooms">No rooms found.</p>
+  </ng-template>
 </section>
