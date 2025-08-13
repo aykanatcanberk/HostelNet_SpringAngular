@@ -2,12 +2,15 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Api } from '../service/api'; 
 import { Router } from '@angular/router';
+import { ChangeDetectorRef } from '@angular/core';
+
 
 @Component({
   selector: 'app-profile',
+  standalone: true,         
   imports: [CommonModule],
   templateUrl: './profile.html',
-  styleUrl: './profile.css'
+  styleUrls: ['./profile.css'] 
 })
 export class Profile {
 
@@ -15,38 +18,34 @@ export class Profile {
   bookings: any[] = [];
   error: any = null;
 
-  constructor(private apiService: Api, private router: Router) {}
+constructor(private apiService: Api, private router: Router, private cd: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.fetchUserProfile();
   }
 
-  fetchUserProfile() {
-    this.apiService.myProfile().subscribe({
-      next: (response: any) => {
-        this.user = response.user;
-        this.apiService.myBookings().subscribe({
-          next: (bookingResponse: any) => {
-            this.bookings = bookingResponse.bookings;
-          },
-          error: (err) => {
-            this.showError(
-              err?.error?.message ||
-                err?.error ||
-                'Error getting my bookings: ' + err
-            );
-          },
-        });
-      },
-      error: (err) => {
-        this.showError(
-          err?.error?.message ||
-            err?.error ||
-            'Error getting my profile info: ' + err
-        );
-      },
-    });
-  }
+fetchUserProfile() {
+  this.apiService.myProfile().subscribe({
+    next: (response: any) => {
+      this.user = response.user;
+      this.apiService.myBookings().subscribe({
+        next: (bookingResponse: any) => {
+          this.bookings = bookingResponse.bookings;
+          this.cd.detectChanges(); 
+        },
+        error: (err) => {
+          this.showError(err?.error?.message || 'Error getting my bookings');
+          this.cd.detectChanges();
+        },
+      });
+      this.cd.detectChanges();
+    },
+    error: (err) => {
+      this.showError(err?.error?.message || 'Error getting my profile info');
+      this.cd.detectChanges();
+    },
+  });
+}
 
   showError(msg: string) {
     this.error = msg;
