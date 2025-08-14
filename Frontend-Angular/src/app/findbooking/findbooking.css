@@ -1,0 +1,120 @@
+/* Genel container */
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Başlık */
+.container h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #007F86;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Hata Mesajı */
+.error {
+    background-color: #ffe6e6;
+    color: #c0392b;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Arama alanı */
+.container div:first-of-type {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+input {
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    width: 320px;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: #007F86;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0,127,134,0.3);
+}
+
+button {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #007F86;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #005f64;
+}
+
+/* Detay Kartı */
+.details {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9fafb;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+}
+
+.details h3 {
+    color: #007F86;
+    margin-bottom: 12px;
+    font-size: 20px;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 5px;
+}
+
+.details p {
+    margin: 6px 0;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+/* Bölümler arası çizgi */
+.details hr {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin: 20px 0;
+}
+
+/* Resim */
+.details img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Mobil uyum */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+    input {
+        width: 100%;
+    }
+    button {
+        width: 100%;
+    }
+}
