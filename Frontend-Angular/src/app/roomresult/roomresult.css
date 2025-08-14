@@ -2,7 +2,7 @@
 .room-section {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 25px;
   margin: 20px 30px;
 }
 
@@ -14,7 +14,9 @@
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  margin-bottom: 5px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 150px; 
 }
 
 .room-item:hover {
@@ -25,7 +27,7 @@
 /* Room Image */
 .room-image {
   flex: 0 0 180px;
-  height: 150px;
+  height: 100%; 
   overflow: hidden;
 }
 
@@ -43,7 +45,7 @@
 /* Room Details */
 .room-details {
   flex: 1;
-  padding: 20px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -68,6 +70,13 @@
 }
 
 /* Book Now Buttons */
+.book-now {
+  display: flex;
+  align-items: center;     
+  justify-content: center;  
+  padding: 15px;
+}
+
 .book-now button {
   background: linear-gradient(135deg, #007F86, #00A9B8);
   color: #fff;
@@ -89,14 +98,6 @@
   font-size: 1em;
 }
 
-.book-now {
-  display: flex;
-  align-items: center;     
-  justify-content: center;  
-  padding: 20px;            
-}
-
-
 /* Hover Effect */
 .book-now button:hover {
   transform: translateY(-2px) scale(1.05);
@@ -108,7 +109,6 @@
   transform: scale(1);
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-
 
 /* No Rooms Message */
 .no-rooms {
@@ -122,7 +122,7 @@
 @media (max-width: 768px) {
   .room-item {
     flex-direction: column;
-    height: auto;
+    height: auto; 
   }
 
   .room-image {
