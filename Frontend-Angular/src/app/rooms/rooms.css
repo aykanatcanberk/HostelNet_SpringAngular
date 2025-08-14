@@ -1,0 +1,67 @@
+/* Container genel görünüm */
+.container {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 20px 25px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* H2 Başlık */
+.container h2 {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #007F86;
+  margin-top: 50px;  
+  margin-bottom: 15px;
+  border-bottom: 2px solid #00A9B8;
+  padding-bottom: 5px;
+}
+/* Filtre Alanı */
+.filter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filter label {
+  font-weight: 600;
+  font-size: 1em;
+  color: #333;
+}
+
+/* Select Kutusu */
+.filter select {
+  background: #fff;
+  border: 2px solid #00A9B8;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.95em;
+  font-weight: 500;
+  color: #007F86;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter select:hover {
+  border-color: #007F86;
+  box-shadow: 0 4px 8px rgba(0, 127, 134, 0.15);
+}
+
+.filter select:focus {
+  outline: none;
+  border-color: #FF7F50;
+  box-shadow: 0 0 0 3px rgba(255,127,80,0.2);
+}
+
+/* Hata Mesajı */
+.error {
+  background: #ffe5e5;
+  color: #c0392b;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.95em;
+  margin-bottom: 15px;
+  border: 1px solid #ffb3b3;
+}
